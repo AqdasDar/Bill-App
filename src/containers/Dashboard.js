@@ -145,8 +145,11 @@ export default class {
       this.counter ++
     }
 
+
+    // Attach click event handlers to all tickets, not just those in the current list
     bills.forEach(bill => {
-      $(`#open-bill${bill.id}`).click((e) => this.handleEditTicket(e, bill, bills))
+      $(`#open-bill${bill.id}`).off('click') // Remove existing click event handler, if any
+      $(`#open-bill${bill.id}`).click((e) => this.handleEditTicket(e, bill, bills)) // Attach new click event handler
     })
 
     return bills

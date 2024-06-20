@@ -34,11 +34,7 @@ beforeEach(() => {
   window.onNavigate(ROUTES_PATH.NewBill);
 });
 
-const mockStore = {
-  bills: jest.fn().mockImplementation(() => ({
-    create: jest.fn().mockImplementation((bill) => Promise.resolve(bill)),
-  })),
-};
+
 
 describe("Given I am connected as an employee", () => {
   describe("When I am on NewBill Page", () => {
