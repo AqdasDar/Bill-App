@@ -19,10 +19,10 @@ describe("Given I am connected as an employee", () => {
         value: localStorageMock
       });
       window.localStorage.setItem(
-        "user",
-        JSON.stringify({
-          type: "Employee"
-        })
+          "user",
+          JSON.stringify({
+            type: "Employee"
+          })
       );
       const root = document.createElement("div");
       root.setAttribute("id", "root");
@@ -37,10 +37,10 @@ describe("Given I am connected as an employee", () => {
     test("Then bills should be ordered from earliest to latest", async () => {
       document.body.innerHTML = BillsUI({ data: bills });
       const dates = screen
-        .getAllByText(
-          /^(19|20)\d\d[- /.](0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])$/i
-        )
-        .map((a) => a.innerHTML);
+          .getAllByText(
+              /^(19|20)\d\d[- /.](0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])$/i
+          )
+          .map((a) => a.innerHTML);
       //trier les dates dans l'ordre anti-chronologique
       dates.sort((a, b) => (new Date(a) < new Date(b) ? 1 : -1));
       const antiChrono = (a, b) => (a < b ? 1 : -1);
@@ -55,10 +55,10 @@ describe("Given I am connected as an employee", () => {
         value: localStorageMock
       });
       window.localStorage.setItem(
-        "user",
-        JSON.stringify({
-          type: "Employee"
-        })
+          "user",
+          JSON.stringify({
+            type: "Employee"
+          })
       );
       const onNavigate = (pathname) => {
         document.body.innerHTML = ROUTES({ pathname });
@@ -115,7 +115,7 @@ describe("Given I am connected as an employee", () => {
 
       const eyeIcon = screen.getAllByTestId("icon-eye")[0];
       const handleClickIconEye = jest.fn(() =>
-        billsInstance.handleClickIconEye(eyeIcon)
+          billsInstance.handleClickIconEye(eyeIcon)
       );
       eyeIcon.addEventListener("click", handleClickIconEye);
       fireEvent.click(eyeIcon);

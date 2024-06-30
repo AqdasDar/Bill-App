@@ -101,13 +101,13 @@ describe("Given that I am a user on login page", () => {
       expect(handleSubmit).toHaveBeenCalled();
       expect(window.localStorage.setItem).toHaveBeenCalled();
       expect(window.localStorage.setItem).toHaveBeenCalledWith(
-        "user",
-        JSON.stringify({
-          type: "Employee",
-          email: inputData.email,
-          password: inputData.password,
-          status: "connected",
-        })
+          "user",
+          JSON.stringify({
+            type: "Employee",
+            email: inputData.email,
+            password: inputData.password,
+            status: "connected",
+          })
       );
     });
 
@@ -213,13 +213,13 @@ describe("Given that I am a user on login page", () => {
       expect(handleSubmit).toHaveBeenCalled();
       expect(window.localStorage.setItem).toHaveBeenCalled();
       expect(window.localStorage.setItem).toHaveBeenCalledWith(
-        "user",
-        JSON.stringify({
-          type: "Admin",
-          email: inputData.email,
-          password: inputData.password,
-          status: "connected",
-        })
+          "user",
+          JSON.stringify({
+            type: "Admin",
+            email: inputData.email,
+            password: inputData.password,
+            status: "connected",
+          })
       );
     });
 
